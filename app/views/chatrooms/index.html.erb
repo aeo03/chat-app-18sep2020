@@ -1,8 +1,12 @@
+<div class="messages" id="message-container">
+    <%= render @messages %>
+</div>
+
 <%= form_with scope: :message, url: create_message_path, remote: true do |f| %>
 
     <p>
         <%= f.text_field :message_body %>
-        <%= f.submit %>
+        <%= f.submit "Send" %>
     </p>
 
 <% end %>
