@@ -1,14 +1,17 @@
-<div class="messages" id="message-container">
-    <%= render @messages %>
+<div class="chat-page">
+    <div class="messages" id="message-container">
+        <%= render @messages %>
+
+    </div>
+    <%= form_with scope: :message, url: create_message_path, remote: true do |f| %>
+
+        <p>
+            <%= f.text_field :message_body %>
+            <%= f.file_field :image %>
+            <%= f.submit "Send" %>
+        </p>
+
+    <% end %>
 </div>
-
-<%= form_with scope: :message, url: create_message_path, remote: true do |f| %>
-
-    <p>
-        <%= f.text_field :message_body %>
-        <%= f.submit "Send" %>
-    </p>
-
-<% end %>
 
 
