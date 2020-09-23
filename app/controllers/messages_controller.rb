@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
     private
 
     def message_params
-        params.require(:message).permit(:message_body, :user_id)
+        params.require(:message).permit(:message_body, :user_id, :image)
     end
 
     def message_render(message)
